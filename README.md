@@ -8,8 +8,7 @@ It has 9 keys (9 switches), a rotary encoder, and an OLED display. Each key is b
 ## CAD Model:
 Everything is connected by four M3x16mm screws and M3x5mx4mm heatset inserts. The case is printed in two parts, top and bottom.
 <p align="center">
-  <img width="993" height="693" alt="image" src="https://github.com/user-attachments/assets/007dc657-6bc8-4544-9be4-6aa4f6d284e5" />
-  <img width="959" height="658" alt="image" src="https://github.com/user-attachments/assets/8815c908-a01f-47f4-be5d-b9282c6b60b5" />
+  <img width="860" height="554" alt="image" src="https://github.com/user-attachments/assets/3fd3689e-9bfc-4f61-afd2-de36619a26f5" />
 
 </p>
 <p align="center">
