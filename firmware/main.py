@@ -7,11 +7,6 @@ from kmk.modules import Module
 from kmk.modules.macros import Macros
 from kmk.extensions.RGB import AnimationModes
 
-# ---------------------------------------------------------------
-# Macros -- launch apps via Windows search (Win key, type, Enter)
-# Tune the delays if your machine is slower/faster to open search
-# or if the typed name doesn't land on the right result.
-# ---------------------------------------------------------------
 macros = Macros()
 keyboard.modules.append(macros)
 
@@ -33,17 +28,13 @@ KC_VSCODE = KC.MACRO(
     KC.ENTER,
 )
 
-# ---------------------------------------------------------------
-# LED mode cycling -- moved from encoder-press (README default)
-# to the bottom-right key, since this encoder has no button.
-# Modes mirror the README's four, plus an Off state.
-# ---------------------------------------------------------------
+
 LED_MODES = [
-    AnimationModes.BREATHING,          # Solid Mode -- slow pulsing blue
-    AnimationModes.RAINBOW,             # Rainbow Mode
-    AnimationModes.SWIRL,                # Wave Mode (closest built-in match)
-    AnimationModes.BREATHING_RAINBOW,   # Grid Fade Mode (closest built-in match)
-    None,                                # Off
+    AnimationModes.BREATHING,          
+    AnimationModes.RAINBOW,             
+    AnimationModes.SWIRL,               
+    AnimationModes.BREATHING_RAINBOW,  
+    None,                              
 ]
 LED_MODE_NAMES = ["Solid", "Rainbow", "Wave", "Grid Fade", "Off"]
 _led_mode_index = 0
@@ -60,7 +51,7 @@ def cycle_led_modes(key, keyboard, *args):
         rgb.enable = True
         rgb.animation_mode = mode
         if mode == AnimationModes.BREATHING:
-            rgb.hue = 160  # keep "Solid Mode" blue, per README
+            rgb.hue = 160  
 
     rgb_label.text = "RGB: " + LED_MODE_NAMES[_led_mode_index]
 
@@ -69,15 +60,8 @@ def cycle_led_modes(key, keyboard, *args):
 
 KC_LED_CYCLE = KC.new_key(on_press=cycle_led_modes)
 
-# ---------------------------------------------------------------
-# PC bridge -- receives volume + "now playing" info from
-# pc_bridge.py (running on the PC) over the usb_cdc data serial
-# port opened in boot.py, and updates the OLED labels.
-#
-# Protocol: one JSON object per line, e.g.
-#   {"vol": 63, "song": "Title", "artist": "Artist", "playing": true}
-# ---------------------------------------------------------------
-SONG_LINE_MAX_CHARS = 21  # rough fit for the default font on a 128px-wide display
+
+SONG_LINE_MAX_CHARS = 21 
 
 
 class PCBridge(Module):
@@ -144,12 +128,6 @@ class PCBridge(Module):
 
 keyboard.modules.append(PCBridge())
 
-# ---------------------------------------------------------------
-# Keymap
-#   Row 1: Rewind          Play/Pause      Fast Forward
-#   Row 2: Netflix         Spotify         VS Code
-#   Row 3: Left             Right           LED Mode Cycle
-# ---------------------------------------------------------------
 keyboard.keymap = [
     [
         KC.MRWD,     KC.MPLY,     KC.MFFD,
@@ -158,9 +136,7 @@ keyboard.keymap = [
     ]
 ]
 
-# ---------------------------------------------------------------
-# Encoder -- volume only, no press action (no button wired)
-# ---------------------------------------------------------------
+
 encoder_handler.map = [
     ((KC.VOLD, KC.VOLU),),
 ]
