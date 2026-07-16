@@ -3,7 +3,7 @@
 
 
 # rektek macropad
-It has 9 keys (9 switches), a rotary encoder, and an OLED display. Each key is backlit with SK6812 MINI-E LEDs. It uses [QMK](https://qmk.fm/) firmware and VIA.
+It has 9 keys (9 switches), a rotary encoder, and an OLED display. Each key is backlit with SK6812 MINI-E LEDs. It uses [QMK](https://qmk.fm/) firmware
 
 ## CAD Model:
 Everything is connected by four M3x16mm screws and M3x5mx4mm heatset inserts. The case is printed in two parts, top and bottom.
